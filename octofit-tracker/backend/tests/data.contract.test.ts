@@ -6,7 +6,7 @@ import { Activity, Team, User, Workout } from '../src/models/index.js';
 
 describe('OctoFit data contract', () => {
   it('requires meaningful user identity and goals', async () => {
-    const user = new User({});
+    const user = new User({name:'John Doe', email: 'john@example.com', fitnessGoal: 'endurance'});
     const error = user.validateSync();
     expect(error?.errors.name).toBeDefined();
     expect(error?.errors.email).toBeDefined();
