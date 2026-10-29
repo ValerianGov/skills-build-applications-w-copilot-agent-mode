@@ -49,7 +49,7 @@ describe('OctoFit data contract', () => {
     process.env.MONGODB_URI = mongo.getUri();
     try {
       await mongoose.connect(mongo.getUri());
-      const sentinelTeam = await Team.create({ name: 'Unrelated teams', mascot: 'Keep', members: [] });
+      const sentinelTeam = await Team.create({ name: 'Unrelated team', mascot: 'Keep', members: [] });
       const sentinelUser = await User.create({
         name: 'Unrelated user',
         email: 'unrelated@example.com',
